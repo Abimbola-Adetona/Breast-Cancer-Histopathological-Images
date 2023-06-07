@@ -9,7 +9,7 @@ image = Image.open('doc.png')
 st.image(image)
 st.title("Breast Cancer Detection App")
 st.header("This application showcases the effect of deep learning on Cancer Detection for my project")
-st.text("By Abimbola")
+st.text("By Abimbola Adetona")
 # Load the model
 def teachable_machine_classification(img, keras_model):
     model = load_model('keras_model.h5')
@@ -33,6 +33,6 @@ if uploaded_file is not None:
     st.image(image, caption='Uploaded image', use_column_width=True)
     label = teachable_machine_classification(image, 'keras_model.h5')
     if label == 0:
-        st.success("The image is most likely benign")
+        st.success("The image is benign")
     else:
-        st.error("The image is most likely malignant")
+        st.error("The image is malignant")
